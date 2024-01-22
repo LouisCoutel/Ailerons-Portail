@@ -19,6 +19,7 @@ body {
     font-family: "Atkinson Hyperlegible";
     color: var(--dark-grey);
     background-color: #458EA9;
+    background: radial-gradient(circle, rgb(98, 202, 239) 0%, rgba(69,142,169,1) 50%, rgba(23,59,101,1) 100%);
 }
 
 header {
@@ -37,7 +38,7 @@ header {
     
     border-bottom: 1px solid;
     border-color: var(--smokey-grey);
-    filter: drop-shadow(0 -4px 8px var(--smokey-grey));
+    filter: drop-shadow(0 -4px 8px var(--dark-grey));
 }
 
 header > section {
@@ -55,7 +56,7 @@ header > nav {
     padding: 0 0.25rem;
     display: flex;
     width: fit-content;
-    color: var(--dark-grey);
+    color: var(--nile-blue);
 }
 
 nav > li {
@@ -71,13 +72,13 @@ a {
 }
 
 a:hover {
-    color: var(--deep-saffron)
+    color: var(--deep-saffron);
 }
 main {
     margin-top: 10vh;
     display: flex;
     flex-direction: column;
-    gap: 0.5rem;
+    gap: 2rem;
     padding: 4vh 4vw;
 }
 
@@ -85,11 +86,13 @@ main > section {
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding: 0 4vw;
+    padding: 4rem;
     background-color: white;
     border-radius: 0.5rem;
-    padding: 1rem;
     box-sizing: border-box;
+    width: min(80vw, 75ch);
+    margin: auto;
+    box-shadow: 0 8px 16px var(--dark-grey);
 }
 
 h1,
@@ -111,22 +114,21 @@ h2 {
 }
 
 form {
-    width: fit-content;
+    width: 100%;
     display: flex;
     flex-direction: column;
-    gap: 0.5rem;
-    width: 100%;
+    gap: 1rem;
+    padding: 0;
 }
+
 
 label {
     font-size: 1.44rem;
+    line-height: 1.5;
     display: flex;
     flex-direction: column;
-
-}
-
-#post-content-input {
-    height: max(80px, 30vh);
+    gap: 0.25rem;
+    overflow: visible;
 }
 
 #main-logo {
@@ -142,14 +144,22 @@ input {
 
 input.date, input.field, textarea, ::file-selector-button, input.submit {
     all: unset;
+    font-size: 1rem;
     border-radius: 0.25rem;
     border: 1px solid;
     border-color: var(--smokey-grey);
     padding: 0.25rem 0.5rem;
 }
 
-input.field {
-    width: 35ch;
+input.date, input.field, textarea {
+    box-shadow: 1px 2px 4px #7374755c inset;
+}
+
+textarea {
+    width: 100%;
+    box-sizing: border-box;
+    height: 33vh;
+    font-size: 1rem;
 }
 
 input.file {
@@ -159,6 +169,7 @@ input.file {
     overflow: visible;
     margin: -4px 0 -4px -4px;
     color: var(--smokey-grey);
+    overflow: visible;
 }
 
 ::file-selector-button {
@@ -175,10 +186,11 @@ input.file {
 
 button, input.submit, ::file-selector-button {
     box-shadow: 1px 2px 4px #7374755c;
+     transition: transform 250ms ease-out;
+     overflow: visible;
 }
 
 input.date {
-    box-shadow: 1px 2px 4px #7374755c inset;
     width: fit-content;
     padding: 0.5rem;
 }
@@ -187,7 +199,15 @@ input.date:hover {
     border-color: var(--blue-hosta)
 }
 
+input.submit {
+    width: fit-content;
+    height: fit-content;
+    align-self: flex-end;
+}
 
+button:hover, input.submit:hover {
+    transform: translateY(-1px);
+}
 
 input.submit:hover {
     color: white;
@@ -195,7 +215,21 @@ input.submit:hover {
     background-color:var(--deep-saffron);
 }
 
+div.row-wrapper {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+}
 
+hr {
+    all: unset;
+    height: 1px;
+    width: 100%;
+    background: linear-gradient(90deg, rgba(23,59,101,0) 0%, rgba(23,59,101,0.6) 33%, rgba(23,59,101,1) 50%, rgba(23,59,101,0.6) 66%, rgba(23,59,101,0) 100%);;
+    margin-bottom: 2rem;
+    
+}
 :target {
      scroll-margin-top: 4rem;
 }

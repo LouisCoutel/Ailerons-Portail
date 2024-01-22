@@ -27,46 +27,39 @@
     <main>
         <section id="csv-upload-section">
             <h2>Téléverser un fichier CSV</h2>
+            <hr />
 
-            <form id="csv-upload-form" action="http://127.0.0.1:5000/upload" method="post" enctype="multipart/form-data">
-                <label for="csvFile">Fichier</label>
-                <input type="file" class="file" id="csvFile" name="csvFile" accept=".csv" />
-                <input type="submit" class="submit">
+            <form id="csv-upload-form" action="http://127.0.0.1:5000/upload" method="post"
+                enctype="multipart/form-data">
+                    <label for="csvFile">Fichier
+                        <input type="file" class="file" id="csvFile" name="csvFile" accept=".csv" />
+                    </label>
+                    <input type="submit" class="submit">
             </form>
         </section>
 
-        <hr />
 
         <section id="news-post-section">
             <h2>Publier une actualité</h2>
-            <form id="news-post-form" >
-                <div class="form-field-wrapper">
-                    <label for="post-title-input">Titre du post
-                    </label>
+            <hr />
+
+            <form id="news-post-form">
+                <label for="post-title-input">Titre du post
                     <input type="field" class="field" id="post-title-input" name="post-title-input">
-                </div>
+                </label>
 
-                <div class="form-field-wrapper">
-                    <label for="post-image-input">Image d'illustration
-                    </label>
+                <label for="post-image-input">Image d'illustration
                     <input type="file" class="file" id="post-image-input" name="post-image-input" accept=".png,.jpg">
-                </div>
+                </label>
 
-                <div class="form-field-wrapper">
+                <label for="post-content-input">Corps de texte
                     <textarea id="post-content-input" name="post-content-input"
                         placeholder="Rédigez votre post ici"></textarea>
-                </div>
+                </label>
 
-                <div class="form-field-wrapper">
-                    <label for="post-content-input">Corps de texte
-                    </label>
-                </div>
-
-                <div class="form-field-wrapper">
-                    <label for="post-title-input">Date de publication souhaitée
-                        <input type="date" class="date" id="publication-date-input" name="publication-date-input">
-                    </label>
-                </div>
+                <label for="post-title-input">Date de publication souhaitée
+                    <input type="date" class="date" id="publication-date-input" name="publication-date-input">
+                </label>
 
                 <input type="submit" class="submit">
             </form>
