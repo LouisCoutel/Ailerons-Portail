@@ -1,0 +1,201 @@
+@import url('https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400;1,700&family=Comfortaa:wght@300;400;500;600;700&display=swap');
+
+* {
+    --nile-blue: #173B65;
+    --blue-hosta: #66C3D0;
+    --cool-blue: #458EA9;
+    --deep-saffron: #F19E37;
+    --smokey-grey: #737475;
+    --dark-grey: #2f2f2f;
+}
+
+html, body, main {
+    padding: 0;
+    margin: 0;
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: "Atkinson Hyperlegible";
+    color: var(--dark-grey);
+    background-color: #458EA9;
+}
+
+header {
+    position:fixed;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: white;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: fit-content;
+    max-height: 10vh;
+    padding: 0.25rem 4vw;
+    box-sizing: border-box;
+    
+    border-bottom: 1px solid;
+    border-color: var(--smokey-grey);
+    filter: drop-shadow(0 -4px 8px var(--smokey-grey));
+}
+
+header > section {
+    display: flex;
+    align-items: center;
+}
+
+li, ul {
+    all: unset;
+}
+
+header > nav {
+    all: unset;
+    font-size: 1.44rem;
+    padding: 0 0.25rem;
+    display: flex;
+    width: fit-content;
+    color: var(--dark-grey);
+}
+
+nav > li {
+    display: flex;
+    width: fit-content;
+    gap: 2rem;
+}
+
+a {
+    all: unset;
+    cursor: pointer;
+    transition: all 250ms ease-out;
+}
+
+a:hover {
+    color: var(--deep-saffron)
+}
+main {
+    margin-top: 10vh;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    padding: 4vh 4vw;
+}
+
+main > section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0 4vw;
+    background-color: white;
+    border-radius: 0.5rem;
+    padding: 1rem;
+    box-sizing: border-box;
+}
+
+h1,
+h2,
+h3,
+h4 {
+    all: unset;
+    line-height: 1.5;
+    font-family: "Comfortaa";
+}
+
+h1 {
+    font-size: 2.074rem;
+    color: var(--nile-blue);
+}
+
+h2 {
+    font-size: 2.488rem;
+}
+
+form {
+    width: fit-content;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    width: 100%;
+}
+
+label {
+    font-size: 1.44rem;
+    display: flex;
+    flex-direction: column;
+
+}
+
+#post-content-input {
+    height: max(80px, 30vh);
+}
+
+#main-logo {
+    max-width: 4rem;
+    max-height: 4rem;
+    background-color: white;
+}
+
+input {
+    font-family: "Atkinson Hyperlegible";
+    background-color: white;
+}
+
+input.date, input.field, textarea, ::file-selector-button, input.submit {
+    all: unset;
+    border-radius: 0.25rem;
+    border: 1px solid;
+    border-color: var(--smokey-grey);
+    padding: 0.25rem 0.5rem;
+}
+
+input.field {
+    width: 35ch;
+}
+
+input.file {
+    display: flex;
+    gap: 1rem;
+    font-size: 1rem;
+    overflow: visible;
+    margin: -4px 0 -4px -4px;
+    color: var(--smokey-grey);
+}
+
+::file-selector-button {
+    color: var(--dark-grey);
+    position: relative;
+    margin: 4px 1rem 4px 4px;
+}
+
+::file-selector-button:hover {
+    color: white;
+    border-color: var(--blue-hosta);
+    background-color:var(--blue-hosta);
+}
+
+button, input.submit, ::file-selector-button {
+    box-shadow: 1px 2px 4px #7374755c;
+}
+
+input.date {
+    box-shadow: 1px 2px 4px #7374755c inset;
+    width: fit-content;
+    padding: 0.5rem;
+}
+
+input.date:hover {
+    border-color: var(--blue-hosta)
+}
+
+
+
+input.submit:hover {
+    color: white;
+    border-color: var(--deep-saffron);
+    background-color:var(--deep-saffron);
+}
+
+
+:target {
+     scroll-margin-top: 4rem;
+}

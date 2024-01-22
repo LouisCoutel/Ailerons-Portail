@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Portail Ailerons</title>
+</head>
+
+<body>
+    <header>
+        <section id="logo-section">
+            <img id="main-logo" src="./Assets/Ailerons_Logo.png" alt="Logo de l'association">
+            <h1>Portail Ailerons</h1>
+        </section>
+
+        <nav class="navbar">
+            <li>
+                <ul><a>Connexion</a></ul>
+                <ul><a href="#csv-upload-section">CSV</a></ul>
+                <ul><a href="#news-post-section">Actus</a></ul>
+            </li>
+        </nav>
+    </header>
+
+    <main>
+        <section id="csv-upload-section">
+            <h2>Téléverser un fichier CSV</h2>
+
+            <form id="csv-upload-form" action="http://127.0.0.1:5000/upload" method="post" enctype="multipart/form-data">
+                <label for="csvFile">Fichier</label>
+                <input type="file" class="file" id="csvFile" name="csvFile" accept=".csv" />
+                <input type="submit" class="submit">
+            </form>
+        </section>
+
+        <hr />
+
+        <section id="news-post-section">
+            <h2>Publier une actualité</h2>
+            <form id="news-post-form" >
+                <div class="form-field-wrapper">
+                    <label for="post-title-input">Titre du post
+                    </label>
+                    <input type="field" class="field" id="post-title-input" name="post-title-input">
+                </div>
+
+                <div class="form-field-wrapper">
+                    <label for="post-image-input">Image d'illustration
+                    </label>
+                    <input type="file" class="file" id="post-image-input" name="post-image-input" accept=".png,.jpg">
+                </div>
+
+                <div class="form-field-wrapper">
+                    <textarea id="post-content-input" name="post-content-input"
+                        placeholder="Rédigez votre post ici"></textarea>
+                </div>
+
+                <div class="form-field-wrapper">
+                    <label for="post-content-input">Corps de texte
+                    </label>
+                </div>
+
+                <div class="form-field-wrapper">
+                    <label for="post-title-input">Date de publication souhaitée
+                        <input type="date" class="date" id="publication-date-input" name="publication-date-input">
+                    </label>
+                </div>
+
+                <input type="submit" class="submit">
+            </form>
+        </section>
+    </main>
+</body>
+
+</html>
