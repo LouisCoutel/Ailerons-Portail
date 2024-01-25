@@ -1,26 +1,23 @@
 {
   "name": "ailerons-portail",
-  "version": "0.1.0",
-  "description": "Back-office for Ailerons",
-  "main": "script.js",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "dev": "vite",
+    "build": "tsc && vite build",
+    "preview": "vite preview"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/LouisCoutel/Ailerons-Portail.git"
-  },
-  "author": "LC",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/LouisCoutel/Ailerons-Portail/issues"
-  },
-  "homepage": "https://github.com/LouisCoutel/Ailerons-Portail#readme",
   "devDependencies": {
     "eslint": "^8.56.0",
     "eslint-config-standard": "^17.1.0",
     "eslint-plugin-import": "^2.29.1",
     "eslint-plugin-n": "^16.6.2",
-    "eslint-plugin-promise": "^6.1.1"
+    "eslint-plugin-promise": "^6.1.1",
+    "typescript": "^5.2.2",
+    "vite": "^5.0.8"
+  },
+  "dependencies": {
+    "traverson": "^8.0.3"
   }
 }
