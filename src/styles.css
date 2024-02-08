@@ -36,7 +36,7 @@ header {
     max-height: 80px;
     padding: 0.25rem 4vw;
     box-sizing: border-box;
-    
+    z-index: 999;
     border-bottom: 1px solid;
     border-color: var(--smokey-grey);
     filter: drop-shadow(0 -4px 8px var(--dark-grey));
@@ -134,9 +134,10 @@ label {
     overflow: visible;
 }
 
-label.radio {
+label.horizontal {
     display: flex;
     font-size: 1.2rem;
+    line-height: 1.2rem;
     padding: 0;
     width: fit-content;
     flex-direction: row;
@@ -147,12 +148,13 @@ label.radio {
     flex: 0 1 auto;
 }
 
+
  div.row-wrapper {
     display: flex;
     width: 100%;
     justify-items: center;  
 }
-input.radio {
+input.check {
     all: unset;
     position: relative;
     width: 16px;
@@ -164,15 +166,15 @@ input.radio {
     transition: all 300ms ease-in-out;
 }
 
-input.radio:checked {
+input.check:checked {
     border-color: var(--blue-hosta);
 }
 
-input.radio:hover {     
+input.check:hover {     
     border-color: var(--blue-hosta);
 }
 
-input.radio::after {
+input.check::after {
     content:"";
     position: absolute;
     width: 16px;
@@ -185,13 +187,13 @@ input.radio::after {
 }
 
 
-input.radio:hover::after {
+input.check:hover::after {
     transform-origin: center;
     opacity: 0.5;
     transform: rotate(0deg) scale(60%);
 }
 
-input.radio:checked::after {
+input.check:checked::after {
     opacity: 1;
     transform: rotate(90deg) scale(60%);
     border-color: var(--blue-hosta);
@@ -202,6 +204,10 @@ legend {
     font-size : 1.728rem;
     line-height: 1.5rem;
     padding: 0.5rem;
+}
+
+legend.nested {
+    font-size: 1.44rem;
 }
 
 #main-logo {
@@ -220,10 +226,11 @@ fieldset {
     margin: 0;
 }
 
-fieldset.radio {
+fieldset.nested {
     border: none;
     padding: 0.5rem 0;
 }
+
 
 input {
     font-family: "Atkinson Hyperlegible";
@@ -320,6 +327,7 @@ div.row-wrapper {
     width: 100%;
     justify-content: space-between;
     align-items: center;
+    flex-wrap: wrap;
 }
 
 div.col-wrapper {

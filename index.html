@@ -1,137 +1,199 @@
 <!DOCTYPE html>
 <html lang="fr">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="stylesheet" href="./src/styles.css" />
+        <title>Portail Ailerons</title>
+    </head>
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./src/styles.css">
-    <title>Portail Ailerons</title>
-</head>
+    <body>
+        <header>
+            <section id="logo-section">
+                <img id="main-logo" src="./Assets/Ailerons_Logo.png" alt="Logo de l'association" />
+                <h1>Portail Ailerons</h1>
+            </section>
 
-<body>
-    <header>
-        <section id="logo-section">
-            <img id="main-logo" src="./Assets/Ailerons_Logo.png" alt="Logo de l'association">
-            <h1>Portail Ailerons</h1>
-        </section>
+            <nav class="navbar">
+                <li>
+                    <ul>
+                        <a>Connexion</a>
+                    </ul>
+                    <ul>
+                        <a href="#csv-upload-section">CSV</a>
+                    </ul>
+                    <ul>
+                        <a href="#news-post-section">Actus</a>
+                    </ul>
+                </li>
+            </nav>
+        </header>
 
-        <nav class="navbar">
-            <li>
-                <ul><a>Connexion</a></ul>
-                <ul><a href="#csv-upload-section">CSV</a></ul>
-                <ul><a href="#news-post-section">Actus</a></ul>
-            </li>
-        </nav>
-    </header>
+        <main>
+            <section id="csv-upload-section">
+                <h2>Téléverser des fichiers</h2>
+                <hr />
 
-    <main>
-        <section id="csv-upload-section">
-            <h2>Téléverser un fichier CSV</h2>
-            <hr />
-
-            <form id="csv-upload-form" action="http://127.0.0.1:5000/upload" method="post"
-                enctype="multipart/form-data">
-                <label for="csvFile">Fichier
-                    <input type="file" class="file" id="csvFile" name="csvFile" accept=".csv" />
-                </label>
-                <input type="submit" class="submit">
-            </form>
-        </section>
-
-        <section id="create-infocard-section">
-            <h2>Créer une fiche d'identité</h2>
-            <hr />
-
-            <form id="create-infocard-form" action="http://127.0.0.1:5000/infocard" method="post"
-                enctype="multipart/form-data">
-
-                <fieldset>
-                    <legend>Individu</legend>
-
-                    <label for="indName">Surnom
-                        <input type="field" class="field" id="indName" name="indName" />
+                <form
+                    id="csv-upload-form"
+                    action="http://127.0.0.1:5000/upload"
+                    method="post"
+                    enctype="multipart/form-data">
+                    <label for="csvFile"
+                        >Relevés de localisation
+                        <input type="file" class="file" id="locFile" name="locFile" accept=".csv" />
                     </label>
-
-                    <label for="indSize">Longueur / Envergure
-                        <input type="number" class="number" id="indSize" name="indSize" min="1" max="600" />
+                    <label for="csvFile"
+                        >Données de capteurs
+                        <input type="file" class="file" id="sensorFile" name="sensorFile" accept=".csv" />
                     </label>
+                    <input type="submit" class="submit" />
+                </form>
+            </section>
 
-                    <label for="indSex">Sexe
-                        <select id="indSex" name="indSex" value="unknown">
-                            <option>male</option>
+            <section id="create-infocard-section">
+                <h2>Créer une fiche d'identité</h2>
+                <hr />
 
-                            <option>female</option>
+                <form
+                    id="create-infocard-form"
+                    action="http://127.0.0.1:5000/infocard"
+                    method="post"
+                    enctype="multipart/form-data">
+                    <fieldset>
+                        <legend>Individu</legend>
 
-                            <option>unknown</option>
-                        </select>
-                    </label>
-
-                    <label for="indPics">Photos
-                        <input type="file" id="indPics" name="indPics" accept=".png,.jpg" multiple />
-                    </label>
-                </fieldset>
-
-                <fieldset>
-                    <legend>Taxon</legend>
-
-                    <search id="species-search">
-                        <label for="specSearch" class="sublabel">Recherche TaxRef
-                            <input type="search" class="search" id="specSearch" name="specSearch" />
+                        <label for="indName"
+                            >Surnom
+                            <input type="field" class="field" id="indName" name="indName" />
                         </label>
 
-                        <div class="row-wrapper">
-                            <label class="radio" for="by-name">
-                                <input type="radio" class="radio" id="by-name" name="search-type" value="by-name"
-                                    checked />
-                                Par nom
-                            </label>
+                        <label for="indSize"
+                            >Envergure
+                            <input type="number" class="number" id="indSize" name="indSize" min="1" max="600" />
+                        </label>
 
-                            <label class="radio" for="by-code">
-                                <input type="radio" id="by-code" class="radio" name="search-type" value="by-code" />
-                                Par code
-                            </label>
-                        </div>
-                    </search>
+                        <label for="indSex"
+                            >Sexe
+                            <select id="indSex" name="indSex" value="unknown">
+                                <option>male</option>
 
-                    <section id="taxref-results-section">
-                        <select class="taxref-results" id="specInfos" name="specInfos">
+                                <option>female</option>
 
-                        </select>
-                    </section>
+                                <option>unknown</option>
+                            </select>
+                        </label>
+
+                        <label for="indPics"
+                            >Photos
+                            <input type="file" id="indPics" name="indPics" accept=".png,.jpg" multiple />
+                        </label>
+                    </fieldset>
+                    <fieldset>
+                        <legend>Contexte de balisage</legend>
+
+                        <fieldset class="nested">
+                            <legend class="nested">Situation</legend>
+
+                            <div class="row-wrapper">
+                                <label class="horizontal" for="alone">
+                                    Seul
+                                    <input type="radio" class="check" id="situation" name="situation" value="alone" />
+                                </label>
+
+                                <label class="horizontal" for="group">
+                                    En groupe
+                                    <input type="radio" class="check" id="situation" name="situation" value="group" />
+                                </label>
+
+                                <label class="horizontal" for="couple">
+                                    Avec partenaire
+                                    <input type="radio" class="check" id="situation" name="situation" value="couple" />
+                                </label>
+                            </div>
+                        </fieldset>
+
+                        <fieldset class="nested">
+                            <legend class="nested">Comportement</legend>
+
+                            <div class="row-wrapper">
+                                <label class="horizontal" for="feeding">
+                                    En train de se nourrir
+                                    <input type="checkbox" class="check" id="feeding" name="feeding" />
+                                </label>
+
+                                <label class="horizontal" for="reproduction">
+                                    En période de reproduction
+                                    <input type="checkbox" class="check" id="reproduction" name="reproduction" />
+                                </label>
+
+                                <label class="horizontal" for="gestation">
+                                    En période de gestation
+                                    <input type="checkbox" class="check" id="gestation" name="gestation" />
+                                </label>
+
+                                <label class="horizontal" for="reproduction">
+                                    Effectuait des acrobaties
+                                    <input type="checkbox" class="check" id="jumping" name="jumping" />
+                                </label>
+
+                                <label class="horizontal" for="injured">
+                                    Blessé
+                                    <input type="checkbox" class="check" id="injured" name="injured" />
+                                </label>
+
+                                <label class="horizontal" for="sick">
+                                    Malade
+                                    <input type="checkbox" class="check" id="injured" name="injured" />
+                                </label>
+
+                                <label class="horizontal" for="parasites">
+                                    Présence de parasites
+                                    <input type="checkbox" class="check" id="parasites" name="parasites" />
+                                </label>
+                            </div>
+                        </fieldset>
+                    </fieldset>
+
+                    <input type="submit" class="submit" />
+                </form>
+            </section>
+
+            <section id="news-post-section">
+                <h2>Publier une actualité</h2>
+                <hr />
+
+                <form
+                    id="news-post-form"
+                    action="http://127.0.0.1:5000/news"
+                    method="post"
+                    enctype="multipart/form-data">
+                    <label for="post-title-input"
+                        >Titre du post
+                        <input type="field" class="field" id="post-title-input" name="newsTitle" />
                     </label>
-                </fieldset>
 
-                <input type="submit" class="submit">
-            </form>
-        </section>
+                    <label for="post-image-input"
+                        >Image d'illustration
+                        <input type="file" class="file" id="post-image-input" name="newsImage" accept=".png,.jpg" />
+                    </label>
 
+                    <label for="post-content-input"
+                        >Corps de texte
+                        <textarea
+                            id="post-content-input"
+                            name="newsContent"
+                            placeholder="Rédigez votre post ici"></textarea>
+                    </label>
 
-        <section id="news-post-section">
-            <h2>Publier une actualité</h2>
-            <hr />
+                    <label for="post-title-input"
+                        >Date de publication souhaitée
+                        <input type="datetime-local" class="date" id="publication-date-input" name="newsDate" />
+                    </label>
 
-            <form id="news-post-form" action="http://127.0.0.1:5000/news" method="post" enctype="multipart/form-data">
-                <label for="post-title-input">Titre du post
-                    <input type="field" class="field" id="post-title-input" name="newsTitle">
-                </label>
-
-                <label for="post-image-input">Image d'illustration
-                    <input type="file" class="file" id="post-image-input" name="newsImage" accept=".png,.jpg">
-                </label>
-
-                <label for="post-content-input">Corps de texte
-                    <textarea id="post-content-input" name="newsContent"
-                        placeholder="Rédigez votre post ici"></textarea>
-                </label>
-
-                <label for="post-title-input">Date de publication souhaitée
-                    <input type="datetime-local" class="date" id="publication-date-input" name="newsDate">
-                </label>
-
-                <input type="submit" class="submit">
-            </form>
-        </section>
-    </main>
-</body>
-
+                    <input type="submit" class="submit" />
+                </form>
+            </section>
+        </main>
+    </body>
 </html>
