@@ -17,10 +17,9 @@ html, body, main {
 }
 
 body {
-    font-family: "Atkinson Hyperlegible";
+    font-family: "Atkinson Hyperlegible", sans-serif;
     color: var(--dark-grey);
-    background-color: #458EA9;
-    background: radial-gradient(circle, rgb(98, 202, 239) 0%, rgba(69,142,169,1) 50%, rgba(23,59,101,1) 100%);
+    background: radial-gradient(circle, rgb(98 202 239) 0%, rgb(69 142 169 / 100%) 50%, rgb(23 59 101 / 100%) 100%);
 }
 
 header {
@@ -47,10 +46,6 @@ header > section {
     align-items: center;
 }
 
-li, ul {
-    all: unset;
-}
-
 header > nav {
     all: unset;
     font-size: 1.44rem;
@@ -58,6 +53,10 @@ header > nav {
     display: flex;
     width: fit-content;
     color: var(--nile-blue);
+}
+
+li, ul {
+    all: unset;
 }
 
 nav > li {
@@ -102,7 +101,7 @@ h3,
 h4 {
     all: unset;
     line-height: 1.5;
-    font-family: "Comfortaa";
+    font-family: Comfortaa, sans-serif;
 }
 
 h1 {
@@ -122,15 +121,13 @@ form {
     padding: 0;
 }
 
-
 label {
-    font-family: "Comfortaa";
+    font-family: Comfortaa, sans-serif;
     margin: 0 0.5rem;
     font-size: 1.44rem;
     line-height: 1.5;
     display: flex;
     flex-direction: column;
-    /* gap: 0.25rem; */
     overflow: visible;
 }
 
@@ -146,14 +143,22 @@ label.horizontal {
     cursor: pointer;
     margin: 0.5rem auto;
     flex: 0 1 auto;
+    font-family: "Atkinson Hyperlegible", sans-serif;
 }
 
-
- div.row-wrapper {
-    display: flex;
-    width: 100%;
-    justify-items: center;  
+label.grow {
+    width: auto;
+    margin: 0;
+    flex: 1 1 auto;
+    justify-content: space-between;
+    padding: 0.5rem 1rem;
 }
+
+input {
+    font-family: "Atkinson Hyperlegible", sans-serif;
+    background-color: white;
+}
+
 input.check {
     all: unset;
     position: relative;
@@ -163,7 +168,7 @@ input.check {
     border-color: var(--dark-grey);
     border-radius: 0.25rem;
     cursor: pointer;
-    transition: all 300ms ease-in-out;
+    transition: all 250ms ease-in-out;
 }
 
 input.check:checked {
@@ -171,7 +176,7 @@ input.check:checked {
 }
 
 input.check:hover {     
-    border-color: var(--blue-hosta);
+    border-color: var(--cool-blue);
 }
 
 input.check::after {
@@ -180,12 +185,11 @@ input.check::after {
     width: 16px;
     height: 16px;
     border-radius: 2px;
-    transition: all 300ms ease-in-out;
+    transition: all 250ms ease-in-out;
     opacity: 0;
     transform: scale(25%);
     background-color: var(--blue-hosta);
 }
-
 
 input.check:hover::after {
     transform-origin: center;
@@ -200,7 +204,7 @@ input.check:checked::after {
 }
 
 legend {
-    font-family: "Comfortaa";
+    font-family: Comfortaa, sans-serif;
     font-size : 1.728rem;
     line-height: 1.5rem;
     padding: 0.5rem;
@@ -231,12 +235,6 @@ fieldset.nested {
     padding: 0.5rem 0;
 }
 
-
-input {
-    font-family: "Atkinson Hyperlegible";
-    background-color: white;
-}
-
 input.date, input.field, select, input.number, input.search, textarea, ::file-selector-button, input.submit {
     all: unset;
     cursor: pointer;
@@ -255,6 +253,15 @@ input.date, input.field, select, input.number, input.search, textarea {
     box-shadow: 1px 2px 4px #7374755c inset;
 }
 
+input.file {
+    display: flex;
+    gap: 1rem;
+    font-size: 1rem;
+    margin: -4px 0 -4px -4px;
+    color: var(--smokey-grey);
+    overflow: visible;
+}
+
 textarea {
     width: 100%;
     box-sizing: border-box;
@@ -262,18 +269,7 @@ textarea {
     font-size: 1rem;
 }
 
-input.file {
-    display: flex;
-    gap: 1rem;
-    font-size: 1rem;
-    overflow: visible;
-    margin: -4px 0 -4px -4px;
-    color: var(--smokey-grey);
-    overflow: visible;
-}
-
 ::file-selector-button {
-    color: var(--dark-grey);
     position: relative;
     margin: 4px 1rem 4px 4px;
     border-color: var(--blue-hosta);
@@ -281,17 +277,17 @@ input.file {
     color: white;
 }
 
-::file-selector-button:hover {
-    color: var(--blue-hosta);
-    border-color: var(--blue-hosta);
-    background-color:var(--egg-shell);
-}
-
 button, input.submit, ::file-selector-button {
     box-shadow: 1px 2px 4px #7374755c;
     transition: transform 250ms ease-out;
     overflow: visible;
     font-size: 1.2rem;
+}
+
+::file-selector-button:hover {
+    color: var(--blue-hosta);
+    border-color: var(--blue-hosta);
+    background-color:var(--egg-shell);
 }
 
 input.date {
@@ -341,10 +337,28 @@ hr {
     all: unset;
     height: 1px;
     width: 100%;
-    background: linear-gradient(90deg, rgba(23,59,101,0) 0%, rgba(23,59,101,0.6) 33%, rgba(23,59,101,1) 50%, rgba(23,59,101,0.6) 66%, rgba(23,59,101,0) 100%);;
+    background: linear-gradient(90deg, rgb(23 59 101 / 0%) 0%, rgb(23 59 101 / 60%) 33%, rgb(23 59 101 / 100%) 50%, rgb(23 59 101 / 60%) 66%, rgb(23 59 101 / 0%) 100%);;
     margin-bottom: 2rem;
     
 }
+
 :target {
      scroll-margin-top: 4rem;
 }
+
+@media (width >= 0) {
+    html { font-size: 70%; }
+}
+
+@media (width >= 640px) {
+    html { font-size: 85%; }
+}
+
+@media (width >= 768px) {
+    html { font-size: 100%; }
+}
+
+@media (width >= 1536px) {
+    html { font-size: 115%; }
+}
+
