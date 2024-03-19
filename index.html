@@ -4,6 +4,10 @@
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <link rel="stylesheet" href="./src/styles.css" />
+        <script
+            src="https://unpkg.com/htmx.org@1.9.11"
+            integrity="sha384-0gxUXCCR8yv9FM2b+U3FDbsKthCI66oH5IA9fHppQq9DDMHuMauqq1ZHBpJxQ0J0"
+            crossorigin="anonymous"></script>
         <title>Portail Ailerons</title>
     </head>
 
@@ -39,6 +43,7 @@
                     action="http://127.0.0.1:5000/upload"
                     method="post"
                     enctype="multipart/form-data">
+                    <div hx-trigger="load" hx-get="http://127.0.0.1:5000/htmx/load"></div>
                     <label for="locFile"
                         >Relevés de localisation
                         <input type="file" class="file" id="locFile" name="locFile" accept=".csv" />
